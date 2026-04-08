@@ -63,16 +63,16 @@ export default function Home() {
       <HomeJsonLd />
       <Header />
 
-      {/* Two-column layout: Sidebar + Main from the start */}
-      <div className="flex-1">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start">
-          {/* Sidebar - visible from the top */}
-          <div className="hidden lg:block">
+      {/* Two-column layout on desktop, single column on mobile */}
+      <div className="flex-1 w-full overflow-x-hidden">
+        <div className="max-w-7xl mx-auto lg:flex lg:items-start">
+          {/* Sidebar - desktop only */}
+          <div className="hidden lg:block flex-shrink-0">
             <Sidebar />
           </div>
 
           {/* Main Content - all sections */}
-          <main className="flex-1 min-w-0">
+          <main className="w-full lg:flex-1 lg:min-w-0">
             <HeroSearch />
             <CategoryGrid />
             <FeaturedCarousel />

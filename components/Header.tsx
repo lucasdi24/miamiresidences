@@ -73,8 +73,8 @@ export default function Header() {
               </button>
 
               {/* Logo */}
-              <a href="/" className="flex flex-col items-center lg:items-start">
-                <span className="text-base lg:text-lg font-semibold tracking-[0.15em]">MIAMI RESIDENCE</span>
+              <a href="/" className="flex flex-col items-center lg:items-start min-w-0 flex-1 lg:flex-initial">
+                <span className="text-sm sm:text-base lg:text-lg font-semibold tracking-[0.1em] lg:tracking-[0.15em] whitespace-nowrap">MIAMI RESIDENCE</span>
                 <span className="hidden lg:block text-[9px] text-white/40 tracking-[0.25em] uppercase">Luxury Real Estate</span>
               </a>
 
