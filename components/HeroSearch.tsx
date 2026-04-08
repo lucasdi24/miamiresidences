@@ -55,14 +55,14 @@ export default function HeroSearch() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/90" />
       </div>
 
-      <div className="relative max-w-3xl mx-auto pt-12 pb-14 px-4">
-        <div className="text-center mb-8">
+      <div className="relative max-w-3xl mx-auto pt-8 pb-10 md:pt-12 md:pb-14 px-4">
+        <div className="text-center mb-6 md:mb-8">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gold font-medium mb-3">Miami Residence Realty</p>
-          <h1 className="text-3xl md:text-4xl font-semibold text-white mb-2 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-2 leading-tight">
             Find Your Dream Home<br />in Miami
           </h1>
-          <p className="text-sm text-white/50 max-w-lg mx-auto">
-            Search luxury condos, waterfront homes, and exclusive new developments across South Florida
+          <p className="text-xs md:text-sm text-white/60 max-w-lg mx-auto px-4">
+            Luxury condos, waterfront homes, and exclusive new developments
           </p>
         </div>
 
@@ -73,10 +73,10 @@ export default function HeroSearch() {
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`flex-1 px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200 ${
+                className={`flex-1 px-4 py-4 text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200 min-h-[48px] ${
                   tab === t
                     ? 'bg-primary text-white'
-                    : 'text-muted hover:text-primary bg-light'
+                    : 'text-muted hover:text-primary bg-light active:bg-gray-200'
                 }`}
               >
                 {t}
@@ -90,7 +90,7 @@ export default function HeroSearch() {
               <button
                 key={st}
                 onClick={() => setSubTab(st)}
-                className={`px-6 py-3 text-xs capitalize transition-all duration-200 ${
+                className={`flex-1 px-4 py-3 text-xs capitalize transition-all duration-200 min-h-[44px] ${
                   subTab === st
                     ? 'font-semibold text-primary border-b-2 border-gold'
                     : 'text-muted hover:text-primary'
@@ -102,73 +102,72 @@ export default function HeroSearch() {
           </div>
 
           {/* Search form */}
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             {subTab !== 'estimate' ? (
-              <form onSubmit={handleSearch}>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-                  <select value={neighborhood} onChange={e => setNeighborhood(e.target.value)} className="select-field">
-                    <option value="">All Neighborhoods</option>
-                    {neighborhoods.map(n => <option key={n} value={n}>{n}</option>)}
-                  </select>
-                  <select value={bedrooms} onChange={e => setBedrooms(e.target.value)} className="select-field">
-                    <option value="">Bedrooms</option>
-                    <option value="0">Studio</option>
-                    <option value="1">1 Bedroom</option>
-                    <option value="2">2 Bedrooms</option>
-                    <option value="3">3 Bedrooms</option>
-                    <option value="4">4+ Bedrooms</option>
-                  </select>
-                  <input type="number" value={minPrice} onChange={e => setMinPrice(e.target.value)} placeholder="Min Price" className="input-field" />
-                  <input type="number" value={maxPrice} onChange={e => setMaxPrice(e.target.value)} placeholder="Max Price" className="input-field" />
+              <form onSubmit={handleSearch} className="space-y-3">
+                <select value={neighborhood} onChange={e => setNeighborhood(e.target.value)} className="select-field">
+                  <option value="">All Neighborhoods</option>
+                  {neighborhoods.map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
+                <select value={bedrooms} onChange={e => setBedrooms(e.target.value)} className="select-field">
+                  <option value="">Bedrooms</option>
+                  <option value="0">Studio</option>
+                  <option value="1">1 Bedroom</option>
+                  <option value="2">2 Bedrooms</option>
+                  <option value="3">3 Bedrooms</option>
+                  <option value="4">4+ Bedrooms</option>
+                </select>
+                <div className="grid grid-cols-2 gap-3">
+                  <input type="number" inputMode="numeric" value={minPrice} onChange={e => setMinPrice(e.target.value)} placeholder="Min Price" className="input-field" />
+                  <input type="number" inputMode="numeric" value={maxPrice} onChange={e => setMaxPrice(e.target.value)} placeholder="Max Price" className="input-field" />
                 </div>
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex gap-5">
-                    <label className="flex items-center gap-2 text-xs cursor-pointer text-muted hover:text-primary transition-colors">
-                      <input type="checkbox" className="accent-gold w-3.5 h-3.5" />
-                      3D Tour
-                    </label>
-                    <label className="flex items-center gap-2 text-xs cursor-pointer text-muted hover:text-primary transition-colors">
-                      <input type="checkbox" className="accent-gold w-3.5 h-3.5" />
-                      Furnished
-                    </label>
-                    <label className="flex items-center gap-2 text-xs cursor-pointer text-muted hover:text-primary transition-colors">
-                      <input type="checkbox" checked={waterfront} onChange={e => setWaterfront(e.target.checked)} className="accent-gold w-3.5 h-3.5" />
-                      Waterfront
-                    </label>
-                  </div>
-                  <button type="submit" className="btn-gold text-sm px-10 rounded-sm">Search</button>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 py-1">
+                  <label className="flex items-center gap-2 text-sm cursor-pointer text-muted hover:text-primary transition-colors min-h-[32px]">
+                    <input type="checkbox" className="accent-gold w-4 h-4" />
+                    3D Tour
+                  </label>
+                  <label className="flex items-center gap-2 text-sm cursor-pointer text-muted hover:text-primary transition-colors min-h-[32px]">
+                    <input type="checkbox" className="accent-gold w-4 h-4" />
+                    Furnished
+                  </label>
+                  <label className="flex items-center gap-2 text-sm cursor-pointer text-muted hover:text-primary transition-colors min-h-[32px]">
+                    <input type="checkbox" checked={waterfront} onChange={e => setWaterfront(e.target.checked)} className="accent-gold w-4 h-4" />
+                    Waterfront
+                  </label>
                 </div>
+                <button type="submit" className="w-full bg-gold text-white py-4 font-semibold uppercase tracking-wider text-sm hover:bg-yellow-700 transition-colors rounded-sm min-h-[52px] active:scale-[0.99]">
+                  Search Properties
+                </button>
               </form>
             ) : (
-              <form onSubmit={handleEstimate}>
-                <p className="text-sm text-accent mb-4">Get an instant estimate of your property&apos;s market value</p>
-                <div className="flex gap-3">
-                  <input
-                    type="text"
-                    value={estimateAddress}
-                    onChange={e => setEstimateAddress(e.target.value)}
-                    placeholder="Enter condo address or building name..."
-                    className="input-field flex-1"
-                    required
-                  />
-                  <button type="submit" className="btn-gold text-sm px-8 rounded-sm">Estimate</button>
-                </div>
+              <form onSubmit={handleEstimate} className="space-y-3">
+                <p className="text-sm text-accent">Get an instant estimate of your property&apos;s market value</p>
+                <input
+                  type="text"
+                  value={estimateAddress}
+                  onChange={e => setEstimateAddress(e.target.value)}
+                  placeholder="Enter condo address or building name..."
+                  className="input-field"
+                  required
+                />
+                <button type="submit" className="w-full bg-gold text-white py-4 font-semibold uppercase tracking-wider text-sm hover:bg-yellow-700 transition-colors rounded-sm min-h-[52px]">
+                  Get Estimate
+                </button>
               </form>
             )}
           </div>
         </div>
 
         {/* Stats */}
-        <div className="flex justify-center gap-10 mt-8">
+        <div className="grid grid-cols-3 gap-3 mt-6 md:mt-8">
           {[
-            { value: '2,500+', label: 'Active Listings' },
+            { value: '2,500+', label: 'Listings' },
             { value: '85+', label: 'Neighborhoods' },
-            { value: '15', label: 'New Developments' },
-            { value: '$350K–$25M', label: 'Price Range', hidden: true },
+            { value: '15', label: 'Developments' },
           ].map(stat => (
-            <div key={stat.label} className={`text-center ${stat.hidden ? 'hidden sm:block' : ''}`}>
-              <p className="text-xl font-semibold text-white">{stat.value}</p>
-              <p className="text-[9px] text-white/40 uppercase tracking-[0.2em] mt-1">{stat.label}</p>
+            <div key={stat.label} className="text-center">
+              <p className="text-lg md:text-xl font-semibold text-white">{stat.value}</p>
+              <p className="text-[9px] md:text-[10px] text-white/40 uppercase tracking-[0.15em] mt-1">{stat.label}</p>
             </div>
           ))}
         </div>

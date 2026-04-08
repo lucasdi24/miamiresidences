@@ -3,32 +3,58 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
     @apply text-primary bg-warm-white antialiased;
+    /* Safe area for iPhone notch / home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
   }
   h1, h2, h3, h4 {
     @apply tracking-tight;
+  }
+  /* Prevent iOS zoom on input focus (requires font-size >= 16px) */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 768px) {
+    input, select, textarea {
+      font-size: inherit;
+    }
+  }
+  /* Touch targets — minimum 44x44 per Apple HIG */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-6 py-2.5 font-medium hover:bg-secondary transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply bg-primary text-white px-6 py-3 font-medium hover:bg-secondary transition-all duration-200 shadow-sm hover:shadow-md min-h-[44px];
   }
   .btn-outline {
-    @apply border border-primary text-primary px-6 py-2.5 font-medium hover:bg-primary hover:text-white transition-all duration-200;
+    @apply border border-primary text-primary px-6 py-3 font-medium hover:bg-primary hover:text-white transition-all duration-200 min-h-[44px];
   }
   .btn-gold {
-    @apply bg-gold text-white px-6 py-2.5 font-medium hover:bg-yellow-700 transition-all duration-200 shadow-sm;
+    @apply bg-gold text-white px-6 py-3 font-medium hover:bg-yellow-700 transition-all duration-200 shadow-sm min-h-[44px];
   }
   .input-field {
-    @apply w-full border border-border bg-white px-4 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/10 transition-all duration-200 rounded-sm;
+    @apply w-full border border-border bg-white px-4 py-3 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/10 transition-all duration-200 rounded-sm min-h-[44px];
   }
   .select-field {
-    @apply w-full border border-border bg-white px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-all duration-200 appearance-none rounded-sm;
+    @apply w-full border border-border bg-white px-4 py-3 text-base md:text-sm focus:outline-none focus:border-primary transition-all duration-200 appearance-none rounded-sm min-h-[44px];
   }
   .card {
     @apply border border-border bg-white shadow-card hover:shadow-card-hover transition-all duration-300 rounded-sm overflow-hidden;
+  }
+  /* Bottom safe area helper for fixed bottom nav */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mb-safe {
+    margin-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -38,7 +64,11 @@
 ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #999; }
 
-/* Smooth transitions */
-* {
+/* Smooth scroll */
+html {
   scroll-behavior: smooth;
 }
+
+/* Hide scrollbar for horizontal scroll containers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

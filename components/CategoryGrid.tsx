@@ -11,26 +11,26 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-10 md:py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-medium mb-2">Explore</p>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">Miami Real Estate in Real Time</h2>
-          <p className="text-sm text-muted max-w-xl mx-auto leading-relaxed">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3">Miami Real Estate in Real Time</h2>
+          <p className="text-xs md:text-sm text-muted max-w-xl mx-auto leading-relaxed px-2">
             All the tools you need to make informed decisions about South Florida real estate.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-5">
           {categories.map(cat => (
             <a
               key={cat.title}
               href={cat.href}
-              className="group text-center p-6 bg-warm-white border border-border rounded-sm hover:shadow-card-hover hover:border-gold/30 transition-all duration-300"
+              className="group text-center p-4 md:p-6 bg-warm-white border border-border rounded-sm hover:shadow-card-hover hover:border-gold/30 active:scale-[0.98] transition-all duration-200 min-h-[140px] flex flex-col items-center justify-center"
             >
-              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">{cat.icon}</div>
-              <h3 className="text-xs font-semibold mb-1.5 uppercase tracking-wide">{cat.title}</h3>
-              <p className="text-[11px] text-muted leading-relaxed">{cat.desc}</p>
+              <div className="text-3xl md:text-4xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">{cat.icon}</div>
+              <h3 className="text-[11px] md:text-xs font-semibold mb-1.5 uppercase tracking-wide leading-snug">{cat.title}</h3>
+              <p className="hidden md:block text-[11px] text-muted leading-relaxed">{cat.desc}</p>
             </a>
           ))}
         </div>
