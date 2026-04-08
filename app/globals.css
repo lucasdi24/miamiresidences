@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-primary bg-warm-white antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2.5 font-medium hover:bg-secondary transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply border border-primary text-primary px-6 py-2.5 font-medium hover:bg-primary hover:text-white transition-all duration-200;
+  }
+  .btn-gold {
+    @apply bg-gold text-white px-6 py-2.5 font-medium hover:bg-yellow-700 transition-all duration-200 shadow-sm;
+  }
+  .input-field {
+    @apply w-full border border-border bg-white px-4 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/10 transition-all duration-200 rounded-sm;
+  }
+  .select-field {
+    @apply w-full border border-border bg-white px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-all duration-200 appearance-none rounded-sm;
+  }
+  .card {
+    @apply border border-border bg-white shadow-card hover:shadow-card-hover transition-all duration-300 rounded-sm overflow-hidden;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}

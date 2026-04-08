@@ -1,0 +1,68 @@
+{
+  "global": {
+    "siteName": "Miami Residence",
+    "titleTemplate": "%s | Miami Residence",
+    "defaultTitle": "Miami Residence - Real Estate Florida | Condos, Homes for Sale and Rent",
+    "defaultDescription": "Miami Beach oceanfront condos for sale and rent. View listings, prices, floor plans. Brickell, South Beach, Sunny Isles, Bal Harbour, Coral Gables.",
+    "defaultKeywords": "miami real estate, miami condos for sale, miami homes for sale, brickell condos, south beach condos, sunny isles condos, luxury real estate miami",
+    "ogImage": "https://picsum.photos/seed/miami-og/1200/630",
+    "twitterHandle": "@miamiresidence",
+    "googleVerification": "",
+    "bingVerification": "",
+    "googleAnalyticsId": "",
+    "googleTagManagerId": ""
+  },
+  "pages": {
+    "/": {
+      "title": "Miami Residence - Real Estate Florida | Condos, Homes for Sale and Rent",
+      "description": "Miami Beach oceanfront condos for sale and rent. View listings, prices, floor plans. Brickell, South Beach, Sunny Isles, Bal Harbour, Coral Gables.",
+      "keywords": "miami real estate, miami condos, luxury condos miami, oceanfront condos",
+      "ogImage": "",
+      "noIndex": false,
+      "canonical": "/"
+    },
+    "/condos": {
+      "title": "Miami Condos for Sale | Oceanfront Luxury Condominiums",
+      "description": "Browse luxury condos for sale in Miami. Oceanfront condominiums in Brickell, South Beach, Sunny Isles Beach, Bal Harbour, and more.",
+      "keywords": "miami condos for sale, oceanfront condos miami, luxury condominiums, brickell condos",
+      "ogImage": "",
+      "noIndex": false,
+      "canonical": "/condos"
+    },
+    "/homes": {
+      "title": "Miami Homes for Sale | Single Family Houses",
+      "description": "Browse luxury single family homes for sale in Miami. Waterfront estates in Coral Gables, Coconut Grove, Key Biscayne, and more.",
+      "keywords": "miami homes for sale, single family homes miami, waterfront homes, luxury houses miami",
+      "ogImage": "",
+      "noIndex": false,
+      "canonical": "/homes"
+    },
+    "/new-developments": {
+      "title": "New Developments Miami | Pre-Construction Condos for Sale",
+      "description": "Explore 15+ new luxury condo developments in Miami. Pre-construction pricing, floor plans, amenities.",
+      "keywords": "new developments miami, pre-construction condos, branded residences miami",
+      "ogImage": "",
+      "noIndex": false,
+      "canonical": "/new-developments"
+    },
+    "/listings": {
+      "title": "All Property Listings | Miami Residence",
+      "description": "Browse all available properties for sale and rent in Miami. Condos, homes, and commercial real estate.",
+      "keywords": "miami listings, properties for sale miami, condos for rent miami",
+      "ogImage": "",
+      "noIndex": false,
+      "canonical": "/listings"
+    }
+  },
+  "redirects": [
+    { "from": "/pre-construction", "to": "/new-developments", "type": 301, "active": true },
+    { "from": "/apartments", "to": "/condos", "type": 301, "active": true },
+    { "from": "/houses", "to": "/homes", "type": 301, "active": true }
+  ],
+  "robots": {
+    "allowAll": true,
+    "disallow": ["/admin/", "/api/", "/_next/"],
+    "sitemapUrl": "https://miamiresidence.com/sitemap.xml",
+    "crawlDelay": 0
+  }
+}

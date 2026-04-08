@@ -1,0 +1,17 @@
+[
+  {"id":"d1","name":"Rivage Bal Harbour","subtitle":"Glamorous Miami Lifestyle","image":"https://picsum.photos/seed/dev-rivage/600/800","neighborhood":"Bal Harbour","units":56,"floors":24,"delivery":"2026","startingPrice":"$5M"},
+  {"id":"d2","name":"Dolce Gabbana Brickell","subtitle":"888 Brickell Miami","image":"https://picsum.photos/seed/dev-dg/600/800","neighborhood":"Brickell","units":259,"floors":90,"delivery":"2027","startingPrice":"$2M"},
+  {"id":"d3","name":"Mercedes-Benz Places","subtitle":"Brickell Miami","image":"https://picsum.photos/seed/dev-mercedes/600/800","neighborhood":"Brickell","units":390,"floors":65,"delivery":"2028","startingPrice":"$1.5M"},
+  {"id":"d4","name":"Waldorf Astoria Miami","subtitle":"Hotel and Residences","image":"https://picsum.photos/seed/dev-waldorf/600/800","neighborhood":"Downtown Miami","units":360,"floors":100,"delivery":"2027","startingPrice":"$1M"},
+  {"id":"d5","name":"Cipriani Residences","subtitle":"Miami for Sale","image":"https://picsum.photos/seed/dev-cipriani/600/800","neighborhood":"Brickell","units":397,"floors":80,"delivery":"2028","startingPrice":"$1.5M"},
+  {"id":"d6","name":"Baccarat Residences","subtitle":"Luxury Residences Miami","image":"https://picsum.photos/seed/dev-baccarat/600/800","neighborhood":"Brickell","units":324,"floors":75,"delivery":"2027","startingPrice":"$2M"},
+  {"id":"d7","name":"St Regis Miami","subtitle":"The Residences for Sale","image":"https://picsum.photos/seed/dev-stregis/600/800","neighborhood":"Brickell","units":152,"floors":48,"delivery":"2027","startingPrice":"$3M"},
+  {"id":"d8","name":"Aria Reserve","subtitle":"New Waterfront Luxury","image":"https://picsum.photos/seed/dev-aria/600/800","neighborhood":"Edgewater","units":782,"floors":62,"delivery":"2024","startingPrice":"$750K"},
+  {"id":"d9","name":"Six Fisher Island","subtitle":"Ultra Luxury Residences","image":"https://picsum.photos/seed/dev-fisher/600/800","neighborhood":"Fisher Island","units":50,"floors":6,"delivery":"2026","startingPrice":"$15M"},
+  {"id":"d10","name":"Mandarin Oriental Miami","subtitle":"Brickell Key","image":"https://picsum.photos/seed/dev-mandarin/600/800","neighborhood":"Brickell Key","units":220,"floors":80,"delivery":"2029","startingPrice":"$3.5M"},
+  {"id":"d11","name":"E11EVEN Residences","subtitle":"Downtown Miami","image":"https://picsum.photos/seed/dev-eleven/600/800","neighborhood":"Downtown Miami","units":375,"floors":65,"delivery":"2025","startingPrice":"$500K"},
+  {"id":"d12","name":"Casa Bella Residences","subtitle":"New Luxury Condos Miami","image":"https://picsum.photos/seed/dev-casabella/600/800","neighborhood":"Downtown Miami","units":306,"floors":56,"delivery":"2025","startingPrice":"$600K"},
+  {"id":"d13","name":"Bentley Residences","subtitle":"Sunny Isles Beach","image":"https://picsum.photos/seed/dev-bentley/600/800","neighborhood":"Sunny Isles Beach","units":216,"floors":63,"delivery":"2027","startingPrice":"$4M"},
+  {"id":"d14","name":"Shell Bay Residences","subtitle":"Hallandale Beach","image":"https://picsum.photos/seed/dev-shellbay/600/800","neighborhood":"Hallandale Beach","units":108,"floors":20,"delivery":"2026","startingPrice":"$3M"},
+  {"id":"d15","name":"Villa Miami","subtitle":"Edgewater Luxury","image":"https://picsum.photos/seed/dev-villa/600/800","neighborhood":"Edgewater","units":60,"floors":58,"delivery":"2027","startingPrice":"$2M"}
+]
